@@ -424,198 +424,115 @@ footer::after {
   transform: rotateZ(10deg);
 }
 
+/* Estilos gerais */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.section-texts {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invert-element {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Responsividade para telas menores */
-
-/* Estilo geral para telas menores que 768px */
 @media (max-width: 768px) {
-  .header {
-    padding: 1rem 2rem;
-    background: var(--primary-bg-color);
-    border-bottom: 1px solid var(--primary-border-color);
-  }
-
-  h1 {
-    font-size: 2.5rem; /* Ajusta o tamanho do título principal */
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  /* Reduz o padding das seções para telas menores */
-  main,
-  .projects,
-  .about,
-  .contact {
-    padding: 2rem;
-  }
-
-  /* Adapta os cartões de projeto para empilhar os elementos verticalmente */
-  .projects__card {
+  .container {
     flex-direction: column;
+    padding: 10px;
   }
 
-  .card__cover {
-    width: 100%; /* Faz a imagem do cartão ocupar a largura total */
+  .section-texts h1, .section-texts h2, .section-texts p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  .invert-element {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .video-frame iframe {
+    width: 100%;
     height: auto;
   }
 
-  /* Seção sobre */
-  .about__content1,
-  .about__content2 {
-    grid-template-columns: 1fr; /* Empilha as colunas na vertical */
-    gap: 2rem;
+  .gallery-container {
+    flex-direction: column;
   }
 
-  .technologies {
-    flex-direction: column; /* As tecnologias ficarão empilhadas */
-    padding: 2rem;
+  .gallery-image {
+    flex: 1 1 100%;
+    margin: 5px 0;
   }
 
-  .technologies__list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  .form-content h3 {
+    font-size: 1.4em;
+    text-align: center;
   }
 
-  .contact p {
-    width: 100%; /* Garante que o texto ocupe a largura inteira */
-  }
-
-  footer {
-    padding: 2rem; /* Ajusta o espaçamento do rodapé */
+  .form-container {
+    padding: 10px;
   }
 }
 
-/* Estilo para telas entre 768px e 992px */
-@media (min-width: 768px) and (max-width: 992px) {
-  .header {
-    padding: 1rem 4rem;
+/* Estilos para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+  .section-texts h1, .section-texts h2 {
+    font-size: 1.1em;
   }
 
-  h1 {
-    font-size: 3.5rem;
+  .section-texts p {
+    font-size: 1em;
   }
 
-  h2 {
-    font-size: 2.5rem;
+  .invert-element {
+    width: 100%;
   }
 
-  .projects__card {
-    flex-direction: row; /* Mantém os cartões lado a lado */
+  .gallery-image {
+    margin: 5px 0;
+    width: 100%;
   }
 
-  .card__cover {
-    width: 50%; /* A imagem ocupará metade do cartão */
+  .form-container {
+    padding: 5px;
   }
 
-  .about__content1,
-  .about__content2 {
-    grid-template-columns: 1fr 1fr; /* Mantém o layout em duas colunas */
+  .form-content h3 {
+    font-size: 1.2em;
   }
 
-  .technologies {
-    flex-direction: row;
-  }
-
-  .contact {
-    padding: 4rem;
-  }
-
-  footer {
-    padding: 3rem;
-  }
-}
-
-/* Estilo para telas maiores que 992px */
-@media (min-width: 992px) {
-  .header {
-    padding: 1rem 6rem;
-  }
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  .projects__card {
-    flex-direction: row; /* Mantém os cartões lado a lado */
-  }
-
-  .card__cover {
-    width: 50%; /* A imagem ocupará metade do cartão */
-  }
-
-  .about__content1,
-  .about__content2 {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-  }
-
-  .technologies {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5rem;
-  }
-
-  .technologies__list {
-    justify-content: space-between;
-  }
-
-  .contact {
-    padding: 6rem;
-  }
-
-  footer {
-    padding: 4rem;
-  }
-}
-
-/* Estilo para telas maiores que 1200px */
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 4.5rem;
-  }
-
-  h2 {
-    font-size: 3.5rem;
-  }
-
-  .header {
-    padding: 1rem 10rem;
-  }
-
-  .projects__card {
-    flex-direction: row;
-  }
-
-  .card__cover {
-    width: 40%; /* Reduz a largura da imagem */
-  }
-
-  .about__content1,
-  .about__content2 {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .technologies {
-    padding: 8rem;
-  }
-
-  .contact {
-    padding: 8rem;
-  }
-
-  footer {
-    padding: 5rem;
+  input, textarea, button {
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 10px;
   }
 }
