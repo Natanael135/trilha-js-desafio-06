@@ -424,180 +424,198 @@ footer::after {
   transform: rotateZ(10deg);
 }
 
-/* Responsividade */
+/* Responsividade para telas menores */
 
-@media (min-width: 768px) {
+/* Estilo geral para telas menores que 768px */
+@media (max-width: 768px) {
   .header {
-    position: fixed;
-    border-bottom: 1px solid var(--primary-border-color);
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
     background: var(--primary-bg-color);
-  }
-
-  .nav--mobile {
-    display: none;
-  }
-
-  .header__nav {
-    display: flex;
-  }
-
-  .header__nav,
-  .header__toggle {
-    min-width: 30%;
+    border-bottom: 1px solid var(--primary-border-color);
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 2.5rem; /* Ajusta o tamanho do título principal */
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Reduz o padding das seções para telas menores */
+  main,
+  .projects,
+  .about,
+  .contact {
+    padding: 2rem;
+  }
+
+  /* Adapta os cartões de projeto para empilhar os elementos verticalmente */
+  .projects__card {
+    flex-direction: column;
+  }
+
+  .card__cover {
+    width: 100%; /* Faz a imagem do cartão ocupar a largura total */
+    height: auto;
+  }
+
+  /* Seção sobre */
+  .about__content1,
+  .about__content2 {
+    grid-template-columns: 1fr; /* Empilha as colunas na vertical */
+    gap: 2rem;
+  }
+
+  .technologies {
+    flex-direction: column; /* As tecnologias ficarão empilhadas */
+    padding: 2rem;
+  }
+
+  .technologies__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .contact p {
+    width: 100%; /* Garante que o texto ocupe a largura inteira */
+  }
+
+  footer {
+    padding: 2rem; /* Ajusta o espaçamento do rodapé */
+  }
+}
+
+/* Estilo para telas entre 768px e 992px */
+@media (min-width: 768px) and (max-width: 992px) {
+  .header {
+    padding: 1rem 4rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .projects__card {
+    flex-direction: row; /* Mantém os cartões lado a lado */
+  }
+
+  .card__cover {
+    width: 50%; /* A imagem ocupará metade do cartão */
+  }
+
+  .about__content1,
+  .about__content2 {
+    grid-template-columns: 1fr 1fr; /* Mantém o layout em duas colunas */
+  }
+
+  .technologies {
+    flex-direction: row;
+  }
+
+  .contact {
+    padding: 4rem;
+  }
+
+  footer {
+    padding: 3rem;
+  }
+}
+
+/* Estilo para telas maiores que 992px */
+@media (min-width: 992px) {
+  .header {
+    padding: 1rem 6rem;
+  }
+
+  h1 {
+    font-size: 4rem;
   }
 
   h2 {
     font-size: 3rem;
   }
 
-  main,
-  .projects,
-  .about {
-    padding: 4rem 6rem 4rem 6rem;
+  .projects__card {
+    flex-direction: row; /* Mantém os cartões lado a lado */
+  }
+
+  .card__cover {
+    width: 50%; /* A imagem ocupará metade do cartão */
+  }
+
+  .about__content1,
+  .about__content2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .technologies {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5rem;
+  }
+
+  .technologies__list {
+    justify-content: space-between;
   }
 
   .contact {
     padding: 6rem;
   }
 
-  .contact p {
-    width: 80%;
-  }
-
-  .main__content1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .technologies {
-    padding: 6.25rem 6rem 2rem 6rem;
-    margin-top: -6rem;
-  }
-
   footer {
-    margin: 0;
+    padding: 4rem;
   }
 }
 
-@media (min-width: 992px) {
+/* Estilo para telas maiores que 1200px */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  .header {
+    padding: 1rem 10rem;
+  }
+
   .projects__card {
     flex-direction: row;
   }
 
-  .projects__card.card--reverse {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
   .card__cover {
-    width: 55%;
-  }
-
-  .about {
-    gap: 5rem;
+    width: 40%; /* Reduz a largura da imagem */
   }
 
   .about__content1,
   .about__content2 {
-    display: grid;
-    grid-template-columns: 34% 60%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
   }
 
-  .about__description h2 {
-    text-align: left;
-  }
-
-  .description__buttons {
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 1200px) {
-  h2 {
-    font-size: 4rem;
-  }
-
-  h3 {
-    font-size: 2.5rem;
-  }
-
-  main {
-    padding: 12rem 6rem 2rem;
-  }
-
-  .main__content1 .btn {
-    width: auto;
-  }
-
   .technologies {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10rem 6rem 4rem;
+    padding: 8rem;
   }
 
-  .technologies h2 {
-    font-size: 3rem;
-    width: 55%;
+  .contact {
+    padding: 8rem;
   }
 
-  .technologies__list {
-    gap: 1rem;
-  }
-
-  .technologies__item {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  .technologies__logo {
-    height: 3rem;
-  }
-
-  p,
-  span,
-  li {
-    font-size: 1.15rem;
-  }
-
-  .card__buttons .btn,
-  .description__buttons .btn {
-    width: auto;
-  }
-}
-
-@media (min-width: 1400px) {
-  h1 {
-    font-size: 6.25rem;
-  }
-
-  h2 {
-    font-size: 4.5rem;
-  }
-
-  h3 {
-    font-size: 3.25rem;
-  }
-
-  .header {
-    padding: 1rem 15rem;
-  }
-
-  main {
-    padding: 12rem 15rem 2rem;
-  }
-
-  .technologies,
-  .projects,
-  .about {
-    padding: 10rem 15rem 4rem;
+  footer {
+    padding: 5rem;
   }
 }
