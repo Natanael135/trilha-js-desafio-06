@@ -9,7 +9,6 @@ Este é um projeto de uma landing page com um design responsivo, que permite alt
 ## Funcionalidades
 
 - **Tema Claro e Escuro**: Um botão que permite ao usuário alternar entre temas claro e escuro.
-- **Design Responsivo**: A página se adapta a diferentes tamanhos de tela, garantindo uma boa experiência em dispositivos móveis e desktops.
 - **Seções**: Contém várias seções, incluindo uma galeria e um formulário de contato.
 
 ## 💻 Tecnologias
