@@ -4,7 +4,7 @@
 
 # Landing Page Stranger Things
 
-Este é um projeto de uma landing page com um design responsivo, que permite alternar entre um tema claro e um tema escuro. A página inclui imagens, seções de texto e um formulário de contato.
+Este é um projeto de uma landing page, que permite alternar entre um tema claro e um tema escuro. A página inclui imagens, seções de texto e um formulário de contato.
 
 ## Funcionalidades
 
